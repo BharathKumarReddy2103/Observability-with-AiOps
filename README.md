@@ -35,6 +35,63 @@ This repository focuses on developing practical capabilities in:
 
 ---
 
+## 🚀 Implemented Project: AWS Infrastructure & Prometheus Dynamic Service Discovery
+
+One of the core implementations in this repository is an AWS-based Expense application infrastructure with automated infrastructure provisioning and Prometheus monitoring.
+
+The objective was to build an environment where infrastructure can be provisioned using Terraform and EC2 instances can be discovered dynamically by Prometheus for monitoring.
+
+### Architecture & Implementation
+
+**AWS Infrastructure**
+- Provisioned AWS infrastructure using Terraform.
+- Created VPC and networking components.
+- Launched separate EC2 instances for MySQL, Backend, Frontend, and monitoring components.
+- Configured security groups and required network connectivity.
+
+**Prometheus Monitoring**
+- Installed and configured Prometheus.
+- Deployed Node Exporter on application and database EC2 instances.
+- Configured AWS EC2 Service Discovery.
+- Integrated EC2 instance metadata using IAM roles.
+- Implemented tag-based instance filtering.
+- Configured Prometheus relabeling to organize discovered targets.
+- Collected infrastructure metrics through Node Exporter.
+
+**Dynamic Service Discovery**
+- Discovered EC2 instances using AWS EC2 metadata.
+- Used tags such as `Monitoring`, `Component`, and `Environment`.
+- Avoided maintaining monitoring targets manually.
+- Enabled Prometheus to discover matching instances dynamically.
+
+**Monitoring & Troubleshooting**
+- Inspected discovered targets through the Prometheus UI.
+- Validated exporter availability and scrape health.
+- Used PromQL to query monitoring metrics.
+- Investigated exporter failures and DOWN targets.
+
+### Implementation Versions
+
+| Version | Description |
+|---|---|
+| `expense-infra-vm-v1` | Initial AWS Expense infrastructure implementation |
+| `expense-infra-vm-v1.2` | Updated infrastructure implementation |
+
+### Key Engineering Concepts Demonstrated
+
+- Infrastructure as Code using Terraform.
+- AWS EC2 and IAM integration.
+- Prometheus EC2 Service Discovery.
+- Node Exporter-based infrastructure monitoring.
+- AWS tag-based resource discovery.
+- Prometheus relabel configurations.
+- PromQL and target health troubleshooting.
+- Automated monitoring of dynamic cloud infrastructure.
+
+**Key takeaway:** Instead of manually maintaining Prometheus scrape targets, AWS EC2 Service Discovery allows Prometheus to discover matching infrastructure dynamically using AWS metadata and instance tags.
+
+---
+
 ## 🏗️ Learning & Implementation Roadmap
 
 The repository is organized around the following engineering areas. Content will be added progressively as implementations are completed.
