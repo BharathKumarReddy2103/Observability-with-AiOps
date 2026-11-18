@@ -35,7 +35,7 @@ This repository focuses on developing practical capabilities in:
 
 ---
 
-## 🚀 Implemented Project: AWS Infrastructure & Prometheus Dynamic Service Discovery
+## Implemented Project: AWS Infrastructure & Prometheus Dynamic Service Discovery
 
 One of the core implementations in this repository is an AWS-based Expense application infrastructure with automated infrastructure provisioning and Prometheus monitoring.
 
