@@ -1,4 +1,4 @@
-# Observability with AIOps
+# Observability with AiOps
 
 ### Building Production-Oriented Observability, SRE & AI-Powered Operations on AWS
 
