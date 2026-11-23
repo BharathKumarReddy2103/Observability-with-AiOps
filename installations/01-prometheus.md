@@ -197,32 +197,32 @@ scrape_configs:
 
   - job_name: "node"
     static_configs:
-      - targets: ["frontend.daws90s.shop:9100"]
+      - targets: ["frontend.bharath2103.shop:9100"]
         labels:
           tier: "frontend"
-      - targets: ["backend.daws90s.shop:9100"]
+      - targets: ["backend.bharath2103.shop:9100"]
         labels:
           tier: "backend"
-      - targets: ["mysql.daws90s.shop:9100"]
+      - targets: ["mysql.bharath2103.shop:9100"]
         labels:
           tier: "mysql"
 
   - job_name: "nginx"
     static_configs:
-      - targets: ["frontend.daws90s.shop:9113"]
+      - targets: ["frontend.bharath2103.shop:9113"]
         labels:
           tier: "frontend"
 
   - job_name: "mysql"
     static_configs:
-      - targets: ["mysql.daws90s.shop:9104"]
+      - targets: ["mysql.bharath2103.shop:9104"]
         labels:
           tier: "mysql"
 
   - job_name: "backend"
     metrics_path: /metrics
     static_configs:
-      - targets: ["backend.daws90s.shop:9101"]
+      - targets: ["backend.bharath2103.shop:9101"]
         labels:
           tier: "backend"
 YAML
