@@ -17,7 +17,7 @@ All settings are environment variables. All are optional.
 
 | Variable   | Default                        | Meaning                                                        |
 |------------|--------------------------------|----------------------------------------------------------------|
-| `BASE_URL` | `https://expense.daws90s.shop` | App URL. **Replace with your own domain.**                     |
+| `BASE_URL` | `https://expense.bharath2103.shop` | App URL. **Replace with your own domain.**                     |
 | `VUS`      | `5`                            | Virtual users running at the same time                         |
 | `DURATION` | `300`                          | Seconds to run                                                 |
 | `THINK_MS` | `500`                          | Average pause between one user's actions (`0` = no pause)      |
@@ -29,7 +29,7 @@ All settings are environment variables. All are optional.
 The app URL is `https://expense.<domain_name>`, where `domain_name` comes
 from `terraform.tfvars`. Set `BASE_URL` to your own domain in every command
 below, for example `https://expense.example.com`. If you skip it, the script
-uses the default `https://expense.daws90s.shop`.
+uses the default `https://expense.bharath2103.shop`.
 
 ---
 
