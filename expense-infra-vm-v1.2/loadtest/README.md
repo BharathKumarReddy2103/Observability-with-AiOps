@@ -17,7 +17,7 @@ All settings are environment variables. All are optional.
 
 | Variable   | Default                        | Meaning                                                        |
 |------------|--------------------------------|----------------------------------------------------------------|
-| `BASE_URL` | `https://expense.bharath2103.online` | App URL. **Replace with your own domain.**                     |
+| `BASE_URL` | `https://expense.daws90s.shop` | App URL. **Replace with your own domain.**                     |
 | `VUS`      | `5`                            | Virtual users running at the same time                         |
 | `DURATION` | `300`                          | Seconds to run                                                 |
 | `THINK_MS` | `500`                          | Average pause between one user's actions (`0` = no pause)      |
@@ -29,7 +29,7 @@ All settings are environment variables. All are optional.
 The app URL is `https://expense.<domain_name>`, where `domain_name` comes
 from `terraform.tfvars`. Set `BASE_URL` to your own domain in every command
 below, for example `https://expense.example.com`. If you skip it, the script
-uses the default `https://expense.bharath2103.online`.
+uses the default `https://expense.daws90s.shop`.
 
 ---
 
@@ -39,11 +39,11 @@ uses the default `https://expense.bharath2103.online`.
 cd C:\learning\aiops-02\expense-infra-vm-v1.2
 
 # basic run: 5 users, 5 minutes
-$env:BASE_URL="https://expense.bharath2103.online"
+$env:BASE_URL="https://expense.<your-domain>"
 node loadtest\expense-load.mjs
 
 # heavier: 20 users, 10 minutes, plus some error requests
-$env:BASE_URL="https://expense.bharath2103.online"; $env:VUS=20; $env:DURATION=600; $env:ERRORS="1"
+$env:BASE_URL="https://expense.<your-domain>"; $env:VUS=20; $env:DURATION=600; $env:ERRORS="1"
 node loadtest\expense-load.mjs
 
 # no pauses between actions (stress test)
@@ -64,13 +64,13 @@ Remove-Item Env:BASE_URL, Env:VUS, Env:DURATION, Env:THINK_MS, Env:RAMP, Env:ERR
 cd /c/learning/aiops-02/expense-infra-vm-v1.2
 
 # basic run
-BASE_URL=https://expense.bharath2103.online node loadtest/expense-load.mjs
+BASE_URL=https://expense.<your-domain> node loadtest/expense-load.mjs
 
 # heavier: 20 users, 10 minutes, plus some error requests
-BASE_URL=https://expense.bharath2103.online VUS=20 DURATION=600 ERRORS=1 node loadtest/expense-load.mjs
+BASE_URL=https://expense.<your-domain> VUS=20 DURATION=600 ERRORS=1 node loadtest/expense-load.mjs
 
 # stress test
-BASE_URL=https://expense.bharath2103.online VUS=50 THINK_MS=0 DURATION=300 node loadtest/expense-load.mjs
+BASE_URL=https://expense.<your-domain> VUS=50 THINK_MS=0 DURATION=300 node loadtest/expense-load.mjs
 ```
 
 `NAME=value` in front of the command applies to that one command only.
@@ -83,19 +83,19 @@ Install Node if you don't have it: `brew install node`.
 cd ~/path/to/expense-infra-vm-v1.2
 
 # basic run
-BASE_URL=https://expense.bharath2103.online node loadtest/expense-load.mjs
+BASE_URL=https://expense.<your-domain> node loadtest/expense-load.mjs
 
 # heavier: 20 users, 10 minutes, plus some error requests
-BASE_URL=https://expense.bharath2103.online VUS=20 DURATION=600 ERRORS=1 node loadtest/expense-load.mjs
+BASE_URL=https://expense.<your-domain> VUS=20 DURATION=600 ERRORS=1 node loadtest/expense-load.mjs
 
 # stress test
-BASE_URL=https://expense.bharath2103.online VUS=50 THINK_MS=0 DURATION=300 node loadtest/expense-load.mjs
+BASE_URL=https://expense.<your-domain> VUS=50 THINK_MS=0 DURATION=300 node loadtest/expense-load.mjs
 ```
 
 To keep a setting for the whole terminal session, export it once:
 
 ```bash
-export BASE_URL=https://expense.bharath2103.online
+export BASE_URL=https://expense.<your-domain>
 node loadtest/expense-load.mjs
 ```
 

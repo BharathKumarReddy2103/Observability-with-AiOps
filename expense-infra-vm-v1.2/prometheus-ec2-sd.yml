@@ -157,9 +157,9 @@ scrape_configs:
   - job_name: blackbox_http
     metrics_path: /probe
     static_configs:
-      - targets: [https://expense.daws88s.online]
+      - targets: [https://expense.bharath2103.online]
         labels: { probe: alb, module: https_2xx }
-      - targets: [http://expense.daws88s.online]
+      - targets: [http://expense.bharath2103.online]
         labels: { probe: alb_redirect, module: http_redirects_to_https }
     relabel_configs:
       - source_labels: [__address__]       # (1) website -> ?target=
@@ -177,16 +177,16 @@ scrape_configs:
     static_configs:
       # Public resolver — what users see
       - targets: [8.8.8.8]
-        labels: { resolver: public, module: dns_expense_a, record: expense.daws88s.online }
+        labels: { resolver: public, module: dns_expense_a, record: expense.bharath2103.online }
       # Amazon VPC resolver — what the app VMs see
       - targets: [169.254.169.253]
-        labels: { resolver: vpc, module: dns_expense_a, record: expense.daws88s.online }
+        labels: { resolver: vpc, module: dns_expense_a, record: expense.bharath2103.online }
       - targets: [169.254.169.253]
-        labels: { resolver: vpc, module: dns_frontend_a, record: frontend.daws88s.online }
+        labels: { resolver: vpc, module: dns_frontend_a, record: frontend.bharath2103.online }
       - targets: [169.254.169.253]
-        labels: { resolver: vpc, module: dns_backend_a, record: backend.daws88s.online }
+        labels: { resolver: vpc, module: dns_backend_a, record: backend.bharath2103.online }
       - targets: [169.254.169.253]
-        labels: { resolver: vpc, module: dns_mysql_a, record: mysql.daws88s.online }
+        labels: { resolver: vpc, module: dns_mysql_a, record: mysql.bharath2103.online }
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target

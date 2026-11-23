@@ -7,17 +7,17 @@
 //
 //   node loadtest/expense-load.mjs                       # 5 VUs, 5 minutes
 //   VUS=20 DURATION=600 node loadtest/expense-load.mjs
-//   BASE_URL=https://expense.bharath2103.online VUS=10 THINK_MS=200 node loadtest/expense-load.mjs
+//   BASE_URL=https://expense.bharath2103.shop VUS=10 THINK_MS=200 node loadtest/expense-load.mjs
 //
 // Env:
-//   BASE_URL   app URL through the ALB      (default https://expense.bharath2103.online)
+//   BASE_URL   app URL through the ALB      (default https://expense.bharath2103.shop)
 //   VUS        concurrent virtual users      (default 5)
 //   DURATION   seconds to run                (default 300)
 //   THINK_MS   avg pause between actions     (default 500; 0 = flat out)
 //   RAMP       seconds to start all VUs      (default 10)
 //   ERRORS=1   also send some bad requests (400/401/404) so error panels move
 
-const BASE_URL = (process.env.BASE_URL || 'https://expense.bharath2103.online').replace(/\/$/, '');
+const BASE_URL = (process.env.BASE_URL || 'https://expense.bharath2103.shop').replace(/\/$/, '');
 const VUS = Number(process.env.VUS || 5);
 const DURATION = Number(process.env.DURATION || 300) * 1000;
 const THINK_MS = Number(process.env.THINK_MS ?? 500);
